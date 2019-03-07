@@ -458,7 +458,6 @@ a:hover, a:active {
     .hero-slider .entry-title {
         font-size: 42px;
         display: flex;
-        justify-content: center;
         align-items: center;
     }
 
@@ -534,6 +533,8 @@ a:hover, a:active {
     background: url("images/featured-events-bg.jpg") no-repeat center;
     background-size: cover !important;
 }
+
+
 
 .homepage-featured-events .event-content-wrap {
     position: relative;
@@ -773,7 +774,7 @@ a:hover, a:active {
     background: url("images/next-events-header-bg.png") no-repeat center;
     text-align: center;
 }
-.events-sponsors .entry-title,.next-events-section-header{
+.events-sponsorss .entry-titles {
     padding: 28px 0;
     font-size: 60px;
     font-weight: bold;
