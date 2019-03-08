@@ -4,4 +4,5 @@ url_style = relative
 url = http://widscolombia.com/
 
 [servers.ghpages]
-target = ghpages+https://datasciencefem/widscolombia/?cname=www.widscolombia.com
+target = ghpages+https://datasciencefem/widscolombia/?cname=www.widscolombia.org
+
