@@ -93,7 +93,7 @@ a:hover, a:active {
 }
 
 .btn.gradient-bg {
-    padding: 18px 46px;
+    padding: 18px 76px;
     border: 0;
     background: #00B140;
     color: #fff;
@@ -774,15 +774,7 @@ a:hover, a:active {
     background: url("images/next-events-header-bg.png") no-repeat center;
     text-align: center;
 }
-.events-sponsorss .entry-titles {
-    padding: 28px 0;
-    font-size: 60px;
-    font-weight: bold;
-    line-height: 1;
-    color: #232127;
-    background: url("images/next-events-header-bg-sponsor.png") no-repeat center;
-    text-align: center;
-}
+
 
 .next-events-section-header p {
     margin-top: 20px;
@@ -1017,12 +1009,14 @@ a:hover, a:active {
 # Newsletter
 --------------------------------------------------------------*/
 .newsletter-subscribe {
-    padding: 150px 0;
+    padding-top: 80px;
+    padding-right: 0px;
+    padding-bottom: 50px;
+    padding-left: 80px;
     background: url("images/newsletter-bg.jpg") no-repeat;
     background-size: cover;
     text-align: center;
 }
-
 .newsletter-subscribe .entry-title {
     font-size: 26px;
     font-weight: bold;
@@ -1035,45 +1029,7 @@ a:hover, a:active {
     font-weight: bold;
     color: #fff;
 }
-.newsletter-subscribe form input[type="text"],
-.newsletter-subscribe form input[type="email"] {
-    width: 100%;
-    color: #232127;
-    padding: 15px 24px;
-    border: 0;
-    border-radius: 6px;
-    font-size: 14px;
-    outline: none;
-}
 
-.newsletter-subscribe form input[type="text"]::placeholder,
-.newsletter-subscribe form input[type="email"]::placeholder {
-    font-style: italic;
-}
-
-
-.newsletter-subscribe form input[type="text"],
-.newsletter-subscribe form input[type="email"],
-.newsletter-subscribe form input[type="submit"] {
-    margin-top: 30px;
-}
-
-@media screen and (min-width: 992px) {
-    .newsletter-subscribe form input[type="text"],
-    .newsletter-subscribe form input[type="email"],
-    .newsletter-subscribe form input[type="submit"] {
-        margin: 80px 8px 0;
-    }
-}
-
-.newsletter-subscribe form input[type="submit"] {
-    border: 2px solid #fff;
-    outline: none;
-}
-
-.newsletter-subscribe form input[type="submit"]:focus {
-    background: #00B140;
-}
 
 /*--------------------------------------------------------------
 # Single Page Header
