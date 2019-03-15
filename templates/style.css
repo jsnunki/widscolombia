@@ -130,7 +130,7 @@ a:hover, a:active {
 --------------------------------*/
 .site-branding img {
     display: block;
-    max-width: 100%;
+    max-width: 120%;
 }
 
 @media screen and (min-width: 992px) {

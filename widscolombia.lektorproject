@@ -1,8 +1,0 @@
-[project]
-name = widscolombia
-url_style = relative
-url = http://widscolombia.org/
-
-[servers.ghpages]
-target = ghpages+https://datasciencefem/widscolombia/?cname=www.widscolombia.org
-
