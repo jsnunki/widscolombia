@@ -34,7 +34,7 @@
   });
 
   var current_slide = mySwiper.activeIndex;
-  var countdown_date = $('.swiper-slide').eq(current_slide).data("date");
+  var countdown_date = $('.swiper-slide').eq(current_slide).data('date');
 
   $('.countdown').countdown(countdown_date, function (event) {
     $('.dday').html(event.strftime('%-D'));
@@ -45,7 +45,7 @@
 
   mySwiper.on('slideChange', function (slider) {
     var current_slide = mySwiper.activeIndex;
-    var countdown_date = $('.swiper-slide').eq(current_slide).data("date");
+    var countdown_date = $('.swiper-slide').eq(current_slide).data('date');
 
     $('.countdown').countdown(countdown_date, function (event) {
       $('.dday').html(event.strftime('%-D'));
@@ -100,28 +100,28 @@
   });
 
   // Buy Tickets Form
-  $(".increase-ticket").click(function () {
+  $('.increase-ticket').click(function () {
     var $n = $(this)
-      .parent(".number-of-ticket")
-      .parent(".flex")
-      .parent(".ticket-row")
-      .find(".ticket-count");
+      .parent('.number-of-ticket')
+      .parent('.flex')
+      .parent('.ticket-row')
+      .find('.ticket-count');
     $n.val(Number($n.val()) + 1);
   });
 
-  $(".decrease-ticket").click(function () {
+  $('.decrease-ticket').click(function () {
     var $n = $(this)
-      .parent(".number-of-ticket")
-      .parent(".flex")
-      .parent(".ticket-row")
-      .find(".ticket-count");
+      .parent('.number-of-ticket')
+      .parent('.flex')
+      .parent('.ticket-row')
+      .find('.ticket-count');
     var amount = Number($n.val());
     if (amount > 0) {
       $n.val(amount - 1);
     }
   });
 
-  $(".clear-ticket-count").on('click', function () {
+  $('.clear-ticket-count').on('click', function () {
     var $count = $('.ticket-count');
     $count.val('1');
   });
@@ -133,11 +133,11 @@
     $('.tab-nav').bind('click', function (e) {
       $this = $(this);
       $tabs = $this.parent().parent().next();
-      $target = $($this.data("target"));
+      $target = $($this.data('target'));
       $this.siblings().removeClass('active');
-      $target.siblings().css("display", "none");
+      $target.siblings().css('display', 'none');
       $this.addClass('active');
-      $target.fadeIn("slow");
+      $target.fadeIn('slow');
     });
 
     $('.tab-nav:first-child').trigger('click');
@@ -162,7 +162,7 @@
     value: 0.16,
     size: 124,
     fill: {
-      gradient: ["#75787B", "#00B140"]
+      gradient: ['#75787B', '#00B140']
     }
   }).on('circle-animation-progress', function (event, progress) {
     $(this).find('strong').html(Math.round(16 * progress) + '<i>%</i>');
@@ -173,7 +173,7 @@
     value: 0.30,
     size: 124,
     fill: {
-      gradient: ["#75787B", "#00B140"]
+      gradient: ['#75787B', '#00B140']
     }
   }).on('circle-animation-progress', function (event, progress) {
     $(this).find('strong').html(Math.round(30 * progress) + '<i>%</i>');
@@ -184,7 +184,7 @@
     value: 0.25,
     size: 124,
     fill: {
-      gradient: ["#75787B", "#00B140"]
+      gradient: ['#75787B', '#00B140']
     }
   }).on('circle-animation-progress', function (event, progress) {
     $(this).find('strong').html(Math.round(25 * progress) + '<i>%</i>');
@@ -195,14 +195,14 @@
     value: 0.82,
     size: 124,
     fill: {
-      gradient: ["#75787B", "#00B140"]
+      gradient: ['#75787B', '#00B140']
     }
   }).on('circle-animation-progress', function (event, progress) {
     $(this).find('strong').html(Math.round(82 * progress) + '<i>%</i>');
   });
 
   // Counter
-  $(".start-counter").each(function () {
+  $('.start-counter').each(function () {
     var counter = $(this);
 
     counter.countTo({
