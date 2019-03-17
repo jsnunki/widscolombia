@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "name": "widscolombia",
+  "alias": "www.widscolombia.org",
+  "builds": [{
+      "src": "*.html",
+      "use": "@now/html-minifier"
+    },
+    {
+      "src": "*.css",
+      "use": "@now/html-minifier"
+    }
+  ]
+}
