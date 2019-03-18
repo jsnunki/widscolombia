@@ -42,7 +42,8 @@
     "start": "gulp serve",
     "build": "cross-env NODE_ENV=production gulp",
     "test": "npm run serve:test",
-    "tasks": "gulp --tasks"
+    "tasks": "gulp --tasks",
+    "deploy": "npm run build && cp now.json dist && cd dist && now"
   },
   "browserslist": [
     "> 1%",
