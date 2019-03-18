@@ -19,7 +19,7 @@
   var mySwiper = new Swiper('.hero-slider', {
     slidesPerView: 1,
     spaceBetween: 0,
-    loop: true,
+    loop: false,
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
