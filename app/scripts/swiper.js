@@ -190,7 +190,7 @@ function data(key, value) {
         return el.dom7ElementDataStorage[key];
       }
 
-      var dataKey = el.getAttribute(("data-" + key));
+      var dataKey = el.getAttribute(('data-' + key));
       if (dataKey) {
         return dataKey;
       }
@@ -1171,7 +1171,7 @@ SwiperClass.installModule = function installModule (module) {
 
   var Class = this;
   if (!Class.prototype.modules) { Class.prototype.modules = {}; }
-  var name = module.name || (((Object.keys(Class.prototype.modules).length) + "_" + (Utils.now())));
+  var name = module.name || (((Object.keys(Class.prototype.modules).length) + '_' + (Utils.now())));
   Class.prototype.modules[name] = module;
   // Prototype
   if (module.proto) {
@@ -1243,7 +1243,7 @@ var updateSlides = function () {
   var swiperSize = swiper.size;
   var rtl = swiper.rtl;
   var wrongRTL = swiper.wrongRTL;
-  var slides = $wrapperEl.children(("." + (swiper.params.slideClass)));
+  var slides = $wrapperEl.children(('.' + (swiper.params.slideClass)));
   var isVirtual = swiper.virtual && params.virtual.enabled;
   var slidesLength = isVirtual ? swiper.virtual.slides.length : slides.length;
   var snapGrid = [];
@@ -1331,8 +1331,8 @@ var updateSlides = function () {
       }
       slide
         .css(
-          ("margin-" + (swiper.isHorizontal() ? 'top' : 'left')),
-          (row !== 0 && params.spaceBetween) && (((params.spaceBetween) + "px"))
+          ('margin-' + (swiper.isHorizontal() ? 'top' : 'left')),
+          (row !== 0 && params.spaceBetween) && (((params.spaceBetween) + 'px'))
         )
         .attr('data-swiper-column', column)
         .attr('data-swiper-row', row);
@@ -1347,9 +1347,9 @@ var updateSlides = function () {
 
       if (slides[i]) {
         if (swiper.isHorizontal()) {
-          slides[i].style.width = slideSize + "px";
+          slides[i].style.width = slideSize + 'px';
         } else {
-          slides[i].style.height = slideSize + "px";
+          slides[i].style.height = slideSize + 'px';
         }
       }
     }
@@ -1383,18 +1383,18 @@ var updateSlides = function () {
 
   if (
     rtl && wrongRTL && (params.effect === 'slide' || params.effect === 'coverflow')) {
-    $wrapperEl.css({ width: ((swiper.virtualSize + params.spaceBetween) + "px") });
+    $wrapperEl.css({ width: ((swiper.virtualSize + params.spaceBetween) + 'px') });
   }
   if (!Support.flexbox || params.setWrapperSize) {
-    if (swiper.isHorizontal()) { $wrapperEl.css({ width: ((swiper.virtualSize + params.spaceBetween) + "px") }); }
-    else { $wrapperEl.css({ height: ((swiper.virtualSize + params.spaceBetween) + "px") }); }
+    if (swiper.isHorizontal()) { $wrapperEl.css({ width: ((swiper.virtualSize + params.spaceBetween) + 'px') }); }
+    else { $wrapperEl.css({ height: ((swiper.virtualSize + params.spaceBetween) + 'px') }); }
   }
 
   if (params.slidesPerColumn > 1) {
     swiper.virtualSize = (slideSize + params.spaceBetween) * slidesNumberEvenToRows;
     swiper.virtualSize = Math.ceil(swiper.virtualSize / params.slidesPerColumn) - params.spaceBetween;
-    if (swiper.isHorizontal()) { $wrapperEl.css({ width: ((swiper.virtualSize + params.spaceBetween) + "px") }); }
-    else { $wrapperEl.css({ height: ((swiper.virtualSize + params.spaceBetween) + "px") }); }
+    if (swiper.isHorizontal()) { $wrapperEl.css({ width: ((swiper.virtualSize + params.spaceBetween) + 'px') }); }
+    else { $wrapperEl.css({ height: ((swiper.virtualSize + params.spaceBetween) + 'px') }); }
     if (params.centeredSlides) {
       newSlidesGrid = [];
       for (var i$1 = 0; i$1 < snapGrid.length; i$1 += 1) {
@@ -1421,9 +1421,9 @@ var updateSlides = function () {
 
   if (params.spaceBetween !== 0) {
     if (swiper.isHorizontal()) {
-      if (rtl) { slides.css({ marginLeft: (spaceBetween + "px") }); }
-      else { slides.css({ marginRight: (spaceBetween + "px") }); }
-    } else { slides.css({ marginBottom: (spaceBetween + "px") }); }
+      if (rtl) { slides.css({ marginLeft: (spaceBetween + 'px') }); }
+      else { slides.css({ marginRight: (spaceBetween + 'px') }); }
+    } else { slides.css({ marginBottom: (spaceBetween + 'px') }); }
   }
 
   Utils.extend(swiper, {
@@ -1475,7 +1475,7 @@ var updateAutoHeight = function () {
   }
 
   // Update Height
-  if (newHeight) { swiper.$wrapperEl.css('height', (newHeight + "px")); }
+  if (newHeight) { swiper.$wrapperEl.css('height', (newHeight + 'px')); }
 };
 
 var updateSlidesOffset = function () {
@@ -1577,11 +1577,11 @@ var updateSlidesClasses = function () {
   var realIndex = swiper.realIndex;
   var isVirtual = swiper.virtual && params.virtual.enabled;
 
-  slides.removeClass(((params.slideActiveClass) + " " + (params.slideNextClass) + " " + (params.slidePrevClass) + " " + (params.slideDuplicateActiveClass) + " " + (params.slideDuplicateNextClass) + " " + (params.slideDuplicatePrevClass)));
+  slides.removeClass(((params.slideActiveClass) + ' ' + (params.slideNextClass) + ' ' + (params.slidePrevClass) + ' ' + (params.slideDuplicateActiveClass) + ' ' + (params.slideDuplicateNextClass) + ' ' + (params.slideDuplicatePrevClass)));
 
   var activeSlide;
   if (isVirtual) {
-    activeSlide = swiper.$wrapperEl.find(("." + (params.slideClass) + "[data-swiper-slide-index=\"" + activeIndex + "\"]"));
+    activeSlide = swiper.$wrapperEl.find(('.' + (params.slideClass) + '[data-swiper-slide-index="' + activeIndex + '"]'));
   } else {
     activeSlide = slides.eq(activeIndex);
   }
@@ -1593,22 +1593,22 @@ var updateSlidesClasses = function () {
     // Duplicate to all looped slides
     if (activeSlide.hasClass(params.slideDuplicateClass)) {
       $wrapperEl
-        .children(("." + (params.slideClass) + ":not(." + (params.slideDuplicateClass) + ")[data-swiper-slide-index=\"" + realIndex + "\"]"))
+        .children(('.' + (params.slideClass) + ':not(.' + (params.slideDuplicateClass) + ')[data-swiper-slide-index="' + realIndex + '"]'))
         .addClass(params.slideDuplicateActiveClass);
     } else {
       $wrapperEl
-        .children(("." + (params.slideClass) + "." + (params.slideDuplicateClass) + "[data-swiper-slide-index=\"" + realIndex + "\"]"))
+        .children(('.' + (params.slideClass) + '.' + (params.slideDuplicateClass) + '[data-swiper-slide-index="' + realIndex + '"]'))
         .addClass(params.slideDuplicateActiveClass);
     }
   }
   // Next Slide
-  var nextSlide = activeSlide.nextAll(("." + (params.slideClass))).eq(0).addClass(params.slideNextClass);
+  var nextSlide = activeSlide.nextAll(('.' + (params.slideClass))).eq(0).addClass(params.slideNextClass);
   if (params.loop && nextSlide.length === 0) {
     nextSlide = slides.eq(0);
     nextSlide.addClass(params.slideNextClass);
   }
   // Prev Slide
-  var prevSlide = activeSlide.prevAll(("." + (params.slideClass))).eq(0).addClass(params.slidePrevClass);
+  var prevSlide = activeSlide.prevAll(('.' + (params.slideClass))).eq(0).addClass(params.slidePrevClass);
   if (params.loop && prevSlide.length === 0) {
     prevSlide = slides.eq(-1);
     prevSlide.addClass(params.slidePrevClass);
@@ -1617,20 +1617,20 @@ var updateSlidesClasses = function () {
     // Duplicate to all looped slides
     if (nextSlide.hasClass(params.slideDuplicateClass)) {
       $wrapperEl
-        .children(("." + (params.slideClass) + ":not(." + (params.slideDuplicateClass) + ")[data-swiper-slide-index=\"" + (nextSlide.attr('data-swiper-slide-index')) + "\"]"))
+        .children(('.' + (params.slideClass) + ':not(.' + (params.slideDuplicateClass) + ')[data-swiper-slide-index="' + (nextSlide.attr('data-swiper-slide-index')) + '"]'))
         .addClass(params.slideDuplicateNextClass);
     } else {
       $wrapperEl
-        .children(("." + (params.slideClass) + "." + (params.slideDuplicateClass) + "[data-swiper-slide-index=\"" + (nextSlide.attr('data-swiper-slide-index')) + "\"]"))
+        .children(('.' + (params.slideClass) + '.' + (params.slideDuplicateClass) + '[data-swiper-slide-index="' + (nextSlide.attr('data-swiper-slide-index')) + '"]'))
         .addClass(params.slideDuplicateNextClass);
     }
     if (prevSlide.hasClass(params.slideDuplicateClass)) {
       $wrapperEl
-        .children(("." + (params.slideClass) + ":not(." + (params.slideDuplicateClass) + ")[data-swiper-slide-index=\"" + (prevSlide.attr('data-swiper-slide-index')) + "\"]"))
+        .children(('.' + (params.slideClass) + ':not(.' + (params.slideDuplicateClass) + ')[data-swiper-slide-index="' + (prevSlide.attr('data-swiper-slide-index')) + '"]'))
         .addClass(params.slideDuplicatePrevClass);
     } else {
       $wrapperEl
-        .children(("." + (params.slideClass) + "." + (params.slideDuplicateClass) + "[data-swiper-slide-index=\"" + (prevSlide.attr('data-swiper-slide-index')) + "\"]"))
+        .children(('.' + (params.slideClass) + '.' + (params.slideDuplicateClass) + '[data-swiper-slide-index="' + (prevSlide.attr('data-swiper-slide-index')) + '"]'))
         .addClass(params.slideDuplicatePrevClass);
     }
   }
@@ -1698,7 +1698,7 @@ var updateActiveIndex = function (newActiveIndex) {
 var updateClickedSlide = function (e) {
   var swiper = this;
   var params = swiper.params;
-  var slide = $$1(e.target).closest(("." + (params.slideClass)))[0];
+  var slide = $$1(e.target).closest(('.' + (params.slideClass)))[0];
   var slideFound = false;
   if (slide) {
     for (var i = 0; i < swiper.slides.length; i += 1) {
@@ -1777,8 +1777,8 @@ var setTranslate = function (translate, byController) {
   }
 
   if (!params.virtualTranslate) {
-    if (Support.transforms3d) { $wrapperEl.transform(("translate3d(" + x + "px, " + y + "px, " + z + "px)")); }
-    else { $wrapperEl.transform(("translate(" + x + "px, " + y + "px)")); }
+    if (Support.transforms3d) { $wrapperEl.transform(('translate3d(' + x + 'px, ' + y + 'px, ' + z + 'px)')); }
+    else { $wrapperEl.transform(('translate(' + x + 'px, ' + y + 'px)')); }
   }
 
   swiper.translate = swiper.isHorizontal() ? x : y;
@@ -2025,7 +2025,7 @@ var slideToClickedSlide = function () {
       ) {
         swiper.loopFix();
         slideToIndex = $wrapperEl
-          .children(("." + (params.slideClass) + "[data-swiper-slide-index=\"" + realIndex + "\"]:not(." + (params.slideDuplicateClass) + ")"))
+          .children(('.' + (params.slideClass) + '[data-swiper-slide-index="' + realIndex + '"]:not(.' + (params.slideDuplicateClass) + ')'))
           .eq(0)
           .index();
 
@@ -2038,7 +2038,7 @@ var slideToClickedSlide = function () {
     } else if (slideToIndex > swiper.slides.length - slidesPerView) {
       swiper.loopFix();
       slideToIndex = $wrapperEl
-        .children(("." + (params.slideClass) + "[data-swiper-slide-index=\"" + realIndex + "\"]:not(." + (params.slideDuplicateClass) + ")"))
+        .children(('.' + (params.slideClass) + '[data-swiper-slide-index="' + realIndex + '"]:not(.' + (params.slideDuplicateClass) + ')'))
         .eq(0)
         .index();
 
@@ -2066,18 +2066,18 @@ var loopCreate = function () {
   var params = swiper.params;
   var $wrapperEl = swiper.$wrapperEl;
   // Remove duplicated slides
-  $wrapperEl.children(("." + (params.slideClass) + "." + (params.slideDuplicateClass))).remove();
+  $wrapperEl.children(('.' + (params.slideClass) + '.' + (params.slideDuplicateClass))).remove();
 
-  var slides = $wrapperEl.children(("." + (params.slideClass)));
+  var slides = $wrapperEl.children(('.' + (params.slideClass)));
 
   if (params.loopFillGroupWithBlank) {
     var blankSlidesNum = params.slidesPerGroup - (slides.length % params.slidesPerGroup);
     if (blankSlidesNum !== params.slidesPerGroup) {
       for (var i = 0; i < blankSlidesNum; i += 1) {
-        var blankNode = $$1(doc.createElement('div')).addClass(((params.slideClass) + " " + (params.slideBlankClass)));
+        var blankNode = $$1(doc.createElement('div')).addClass(((params.slideClass) + ' ' + (params.slideBlankClass)));
         $wrapperEl.append(blankNode);
       }
-      slides = $wrapperEl.children(("." + (params.slideClass)));
+      slides = $wrapperEl.children(('.' + (params.slideClass)));
     }
   }
 
@@ -2136,7 +2136,7 @@ var loopDestroy = function () {
   var $wrapperEl = swiper.$wrapperEl;
   var params = swiper.params;
   var slides = swiper.slides;
-  $wrapperEl.children(("." + (params.slideClass) + "." + (params.slideDuplicateClass))).remove();
+  $wrapperEl.children(('.' + (params.slideClass) + '.' + (params.slideDuplicateClass))).remove();
   slides.removeAttr('data-swiper-slide-index');
 };
 
@@ -2224,7 +2224,7 @@ var removeSlide = function (slidesIndexes) {
 
   if (params.loop) {
     swiper.loopDestroy();
-    swiper.slides = $wrapperEl.children(("." + (params.slideClass)));
+    swiper.slides = $wrapperEl.children(('.' + (params.slideClass)));
   }
   var newActiveIndex = activeIndex;
   var indexToRemove;
@@ -2368,7 +2368,7 @@ var onTouchStart = function (event) {
   data.isTouchEvent = e.type === 'touchstart';
   if (!data.isTouchEvent && 'which' in e && e.which === 3) { return; }
   if (data.isTouched && data.isMoved) { return; }
-  if (params.noSwiping && $$1(e.target).closest(("." + (params.noSwipingClass)))[0]) {
+  if (params.noSwiping && $$1(e.target).closest(('.' + (params.noSwipingClass)))[0]) {
     swiper.allowClick = true;
     return;
   }
@@ -3100,7 +3100,7 @@ var addClasses = function () {
   }
   // WP8 Touch Events Fix
   if (Support.pointerEvents || Support.prefixedPointerEvents) {
-    suffixes.push(("wp8-" + (params.direction)));
+    suffixes.push(('wp8-' + (params.direction)));
   }
 
   suffixes.forEach(function (suffix) {
@@ -3416,7 +3416,7 @@ var Swiper$1 = (function (SwiperClass$$1) {
     $el.data('swiper', swiper);
 
     // Find Wrapper
-    var $wrapperEl = $el.children(("." + (swiper.params.wrapperClass)));
+    var $wrapperEl = $el.children(('.' + (swiper.params.wrapperClass)));
 
     // Extend Swiper
     Utils.extend(swiper, {
@@ -3937,7 +3937,7 @@ var Virtual = {
 
     if (previousFrom === from && previousTo === to && !force) {
       if (swiper.slidesGrid !== previousSlidesGrid && offset !== previousOffset) {
-        swiper.slides.css(offsetProp, (offset + "px"));
+        swiper.slides.css(offsetProp, (offset + 'px'));
       }
       swiper.updateProgress();
       return;
@@ -3961,11 +3961,11 @@ var Virtual = {
     var prependIndexes = [];
     var appendIndexes = [];
     if (force) {
-      swiper.$wrapperEl.find(("." + (swiper.params.slideClass))).remove();
+      swiper.$wrapperEl.find(('.' + (swiper.params.slideClass))).remove();
     } else {
       for (var i = previousFrom; i <= previousTo; i += 1) {
         if (i < from || i > to) {
-          swiper.$wrapperEl.find(("." + (swiper.params.slideClass) + "[data-swiper-slide-index=\"" + i + "\"]")).remove();
+          swiper.$wrapperEl.find(('.' + (swiper.params.slideClass) + '[data-swiper-slide-index="' + i + '"]')).remove();
         }
       }
     }
@@ -3985,7 +3985,7 @@ var Virtual = {
     prependIndexes.sort(function (a, b) { return a < b; }).forEach(function (index) {
       swiper.$wrapperEl.prepend(renderSlide(slides[index], index));
     });
-    swiper.$wrapperEl.children('.swiper-slide').css(offsetProp, (offset + "px"));
+    swiper.$wrapperEl.children('.swiper-slide').css(offsetProp, (offset + 'px'));
     onRendered();
   },
   renderSlide: function renderSlide(slide, index) {
@@ -3996,7 +3996,7 @@ var Virtual = {
     }
     var $slideEl = params.renderSlide
       ? $$1(params.renderSlide.call(swiper, slide, index))
-      : $$1(("<div class=\"" + (swiper.params.slideClass) + "\" data-swiper-slide-index=\"" + index + "\">" + slide + "</div>"));
+      : $$1(('<div class="' + (swiper.params.slideClass) + '" data-swiper-slide-index="' + index + '">' + slide + '</div>'));
     if (!$slideEl.attr('data-swiper-slide-index')) { $slideEl.attr('data-swiper-slide-index', index); }
     if (params.cache) { swiper.virtual.cache[index] = $slideEl; }
     return $slideEl;
@@ -4050,7 +4050,7 @@ var Virtual$1 = {
     beforeInit: function beforeInit() {
       var swiper = this;
       if (!swiper.params.virtual.enabled) { return; }
-      swiper.classNames.push(((swiper.params.containerModifierClass) + "virtual"));
+      swiper.classNames.push(((swiper.params.containerModifierClass) + 'virtual'));
       var overwriteParams = {
         watchSlidesProgress: true,
       };
@@ -4089,7 +4089,7 @@ var Keyboard = {
     if (swiper.params.keyboard.onlyInViewport && (kc === 37 || kc === 39 || kc === 38 || kc === 40)) {
       var inView = false;
       // Check that swiper should be inside of visible area of window
-      if (swiper.$el.parents(("." + (swiper.params.slideClass))).length > 0 && swiper.$el.parents(("." + (swiper.params.slideActiveClass))).length === 0) {
+      if (swiper.$el.parents(('.' + (swiper.params.slideClass))).length > 0 && swiper.$el.parents(('.' + (swiper.params.slideActiveClass))).length === 0) {
         return undefined;
       }
       var windowScroll = {
@@ -4599,9 +4599,9 @@ var Pagination = {
       var bullets = swiper.pagination.bullets;
       if (params.dynamicBullets) {
         swiper.pagination.bulletSize = bullets.eq(0)[swiper.isHorizontal() ? 'outerWidth' : 'outerHeight'](true);
-        $el.css(swiper.isHorizontal() ? 'width' : 'height', ((swiper.pagination.bulletSize * 5) + "px"));
+        $el.css(swiper.isHorizontal() ? 'width' : 'height', ((swiper.pagination.bulletSize * 5) + 'px'));
       }
-      bullets.removeClass(((params.bulletActiveClass) + " " + (params.bulletActiveClass) + "-next " + (params.bulletActiveClass) + "-next-next " + (params.bulletActiveClass) + "-prev " + (params.bulletActiveClass) + "-prev-prev"));
+      bullets.removeClass(((params.bulletActiveClass) + ' ' + (params.bulletActiveClass) + '-next ' + (params.bulletActiveClass) + '-next-next ' + (params.bulletActiveClass) + '-prev ' + (params.bulletActiveClass) + '-prev-prev'));
       if ($el.length > 1) {
         bullets.each(function (index, bullet) {
           var $bullet = $$1(bullet);
@@ -4610,14 +4610,14 @@ var Pagination = {
             if (params.dynamicBullets) {
               $bullet
                 .prev()
-                .addClass(((params.bulletActiveClass) + "-prev"))
+                .addClass(((params.bulletActiveClass) + '-prev'))
                 .prev()
-                .addClass(((params.bulletActiveClass) + "-prev-prev"));
+                .addClass(((params.bulletActiveClass) + '-prev-prev'));
               $bullet
                 .next()
-                .addClass(((params.bulletActiveClass) + "-next"))
+                .addClass(((params.bulletActiveClass) + '-next'))
                 .next()
-                .addClass(((params.bulletActiveClass) + "-next-next"));
+                .addClass(((params.bulletActiveClass) + '-next-next'));
             }
           }
         });
@@ -4627,26 +4627,26 @@ var Pagination = {
         if (params.dynamicBullets) {
           $bullet
             .prev()
-            .addClass(((params.bulletActiveClass) + "-prev"))
+            .addClass(((params.bulletActiveClass) + '-prev'))
             .prev()
-            .addClass(((params.bulletActiveClass) + "-prev-prev"));
+            .addClass(((params.bulletActiveClass) + '-prev-prev'));
           $bullet
             .next()
-            .addClass(((params.bulletActiveClass) + "-next"))
+            .addClass(((params.bulletActiveClass) + '-next'))
             .next()
-            .addClass(((params.bulletActiveClass) + "-next-next"));
+            .addClass(((params.bulletActiveClass) + '-next-next'));
         }
       }
       if (params.dynamicBullets) {
         var dynamicBulletsLength = Math.min(bullets.length, 5);
         var bulletsOffset = (((swiper.pagination.bulletSize * dynamicBulletsLength) - (swiper.pagination.bulletSize)) / 2) - (current * swiper.pagination.bulletSize);
         var offsetProp = rtl ? 'right' : 'left';
-        bullets.css(swiper.isHorizontal() ? offsetProp : 'top', (bulletsOffset + "px"));
+        bullets.css(swiper.isHorizontal() ? offsetProp : 'top', (bulletsOffset + 'px'));
       }
     }
     if (params.type === 'fraction') {
-      $el.find(("." + (params.currentClass))).text(current + 1);
-      $el.find(("." + (params.totalClass))).text(total);
+      $el.find(('.' + (params.currentClass))).text(current + 1);
+      $el.find(('.' + (params.totalClass))).text(total);
     }
     if (params.type === 'progressbar') {
       var scale = (current + 1) / total;
@@ -4656,7 +4656,7 @@ var Pagination = {
         scaleY = scale;
         scaleX = 1;
       }
-      $el.find(("." + (params.progressbarFillClass))).transform(("translate3d(0,0,0) scaleX(" + scaleX + ") scaleY(" + scaleY + ")")).transition(swiper.params.speed);
+      $el.find(('.' + (params.progressbarFillClass))).transform(('translate3d(0,0,0) scaleX(' + scaleX + ') scaleY(' + scaleY + ')')).transition(swiper.params.speed);
     }
     if (params.type === 'custom' && params.renderCustom) {
       $el.html(params.renderCustom(swiper, current + 1, total));
@@ -4681,20 +4681,20 @@ var Pagination = {
         if (params.renderBullet) {
           paginationHTML += params.renderBullet.call(swiper, i, params.bulletClass);
         } else {
-          paginationHTML += "<" + (params.bulletElement) + " class=\"" + (params.bulletClass) + "\"></" + (params.bulletElement) + ">";
+          paginationHTML += '<' + (params.bulletElement) + ' class="' + (params.bulletClass) + '"></' + (params.bulletElement) + '>';
         }
       }
       $el.html(paginationHTML);
-      swiper.pagination.bullets = $el.find(("." + (params.bulletClass)));
+      swiper.pagination.bullets = $el.find(('.' + (params.bulletClass)));
     }
     if (params.type === 'fraction') {
       if (params.renderFraction) {
         paginationHTML = params.renderFraction.call(swiper, params.currentClass, params.totalClass);
       } else {
         paginationHTML =
-        "<span class=\"" + (params.currentClass) + "\"></span>" +
+        '<span class="' + (params.currentClass) + '"></span>' +
         ' / ' +
-        "<span class=\"" + (params.totalClass) + "\"></span>";
+        '<span class="' + (params.totalClass) + '"></span>';
       }
       $el.html(paginationHTML);
     }
@@ -4702,7 +4702,7 @@ var Pagination = {
       if (params.renderProgressbar) {
         paginationHTML = params.renderProgressbar.call(swiper, params.progressbarFillClass);
       } else {
-        paginationHTML = "<span class=\"" + (params.progressbarFillClass) + "\"></span>";
+        paginationHTML = '<span class="' + (params.progressbarFillClass) + '"></span>';
       }
       $el.html(paginationHTML);
     }
@@ -4734,11 +4734,11 @@ var Pagination = {
     $el.addClass(params.modifierClass + params.type);
 
     if (params.type === 'bullets' && params.dynamicBullets) {
-      $el.addClass(("" + (params.modifierClass) + (params.type) + "-dynamic"));
+      $el.addClass(('' + (params.modifierClass) + (params.type) + '-dynamic'));
     }
 
     if (params.clickable) {
-      $el.on('click', ("." + (params.bulletClass)), function onClick(e) {
+      $el.on('click', ('.' + (params.bulletClass)), function onClick(e) {
         e.preventDefault();
         var index = $$1(this).index() * swiper.params.slidesPerGroup;
         if (swiper.params.loop) { index += swiper.loopedSlides; }
@@ -4761,7 +4761,7 @@ var Pagination = {
     $el.removeClass(params.modifierClass + params.type);
     if (swiper.pagination.bullets) { swiper.pagination.bullets.removeClass(params.bulletActiveClass); }
     if (params.clickable) {
-      $el.off('click', ("." + (params.bulletClass)));
+      $el.off('click', ('.' + (params.bulletClass)));
     }
   },
 };
@@ -4887,18 +4887,18 @@ var Scrollbar = {
     }
     if (swiper.isHorizontal()) {
       if (Support.transforms3d) {
-        $dragEl.transform(("translate3d(" + newPos + "px, 0, 0)"));
+        $dragEl.transform(('translate3d(' + newPos + 'px, 0, 0)'));
       } else {
-        $dragEl.transform(("translateX(" + newPos + "px)"));
+        $dragEl.transform(('translateX(' + newPos + 'px)'));
       }
-      $dragEl[0].style.width = newSize + "px";
+      $dragEl[0].style.width = newSize + 'px';
     } else {
       if (Support.transforms3d) {
-        $dragEl.transform(("translate3d(0px, " + newPos + "px, 0)"));
+        $dragEl.transform(('translate3d(0px, ' + newPos + 'px, 0)'));
       } else {
-        $dragEl.transform(("translateY(" + newPos + "px)"));
+        $dragEl.transform(('translateY(' + newPos + 'px)'));
       }
-      $dragEl[0].style.height = newSize + "px";
+      $dragEl[0].style.height = newSize + 'px';
     }
     if (params.hide) {
       clearTimeout(swiper.scrollbar.timeout);
@@ -4936,9 +4936,9 @@ var Scrollbar = {
     }
 
     if (swiper.isHorizontal()) {
-      $dragEl[0].style.width = dragSize + "px";
+      $dragEl[0].style.width = dragSize + 'px';
     } else {
-      $dragEl[0].style.height = dragSize + "px";
+      $dragEl[0].style.height = dragSize + 'px';
     }
 
     if (divider >= 1) {
@@ -5204,14 +5204,14 @@ var Parallax = {
     }
 
     if ((x).indexOf('%') >= 0) {
-      x = (parseInt(x, 10) * progress * rtlFactor) + "%";
+      x = (parseInt(x, 10) * progress * rtlFactor) + '%';
     } else {
-      x = (x * progress * rtlFactor) + "px";
+      x = (x * progress * rtlFactor) + 'px';
     }
     if ((y).indexOf('%') >= 0) {
-      y = (parseInt(y, 10) * progress) + "%";
+      y = (parseInt(y, 10) * progress) + '%';
     } else {
-      y = (y * progress) + "px";
+      y = (y * progress) + 'px';
     }
 
     if (typeof opacity !== 'undefined' && opacity !== null) {
@@ -5219,10 +5219,10 @@ var Parallax = {
       $el[0].style.opacity = currentOpacity;
     }
     if (typeof scale === 'undefined' || scale === null) {
-      $el.transform(("translate3d(" + x + ", " + y + ", 0px)"));
+      $el.transform(('translate3d(' + x + ', ' + y + ', 0px)'));
     } else {
       var currentScale = scale - ((scale - 1) * (1 - Math.abs(progress)));
-      $el.transform(("translate3d(" + x + ", " + y + ", 0px) scale(" + currentScale + ")"));
+      $el.transform(('translate3d(' + x + ', ' + y + ', 0px) scale(' + currentScale + ')'));
     }
   },
   setTranslate: function setTranslate() {
@@ -5332,7 +5332,7 @@ var Zoom = {
       gesture.$slideEl = $$1(this);
       if (gesture.$slideEl.length === 0) { gesture.$slideEl = swiper.slides.eq(swiper.activeIndex); }
       gesture.$imageEl = gesture.$slideEl.find('img, svg, canvas');
-      gesture.$imageWrapEl = gesture.$imageEl.parent(("." + (params.containerClass)));
+      gesture.$imageWrapEl = gesture.$imageEl.parent(('.' + (params.containerClass)));
       gesture.maxRatio = gesture.$imageWrapEl.attr('data-swiper-zoom') || params.maxRatio;
       if (gesture.$imageWrapEl.length === 0) {
         gesture.$imageEl = undefined;
@@ -5366,7 +5366,7 @@ var Zoom = {
     if (zoom.scale < params.minRatio) {
       zoom.scale = (params.minRatio + 1) - (Math.pow( ((params.minRatio - zoom.scale) + 1), 0.5 ));
     }
-    gesture.$imageEl.transform(("translate3d(0,0,0) scale(" + (zoom.scale) + ")"));
+    gesture.$imageEl.transform(('translate3d(0,0,0) scale(' + (zoom.scale) + ')'));
   },
   onGestureEnd: function onGestureEnd(e) {
     var swiper = this;
@@ -5385,7 +5385,7 @@ var Zoom = {
     }
     if (!gesture.$imageEl || gesture.$imageEl.length === 0) { return; }
     zoom.scale = Math.max(Math.min(zoom.scale, gesture.maxRatio), params.minRatio);
-    gesture.$imageEl.transition(swiper.params.speed).transform(("translate3d(0,0,0) scale(" + (zoom.scale) + ")"));
+    gesture.$imageEl.transition(swiper.params.speed).transform(('translate3d(0,0,0) scale(' + (zoom.scale) + ')'));
     zoom.currentScale = zoom.scale;
     zoom.isScaling = false;
     if (zoom.scale === 1) { gesture.$slideEl = undefined; }
@@ -5491,7 +5491,7 @@ var Zoom = {
     velocity.prevPositionY = image.touchesCurrent.y;
     velocity.prevTime = Date.now();
 
-    gesture.$imageWrapEl.transform(("translate3d(" + (image.currentX) + "px, " + (image.currentY) + "px,0)"));
+    gesture.$imageWrapEl.transform(('translate3d(' + (image.currentX) + 'px, ' + (image.currentY) + 'px,0)'));
   },
   onTouchEnd: function onTouchEnd() {
     var swiper = this;
@@ -5532,7 +5532,7 @@ var Zoom = {
     image.currentX = Math.max(Math.min(image.currentX, image.maxX), image.minX);
     image.currentY = Math.max(Math.min(image.currentY, image.maxY), image.minY);
 
-    gesture.$imageWrapEl.transition(momentumDuration).transform(("translate3d(" + (image.currentX) + "px, " + (image.currentY) + "px,0)"));
+    gesture.$imageWrapEl.transition(momentumDuration).transform(('translate3d(' + (image.currentX) + 'px, ' + (image.currentY) + 'px,0)'));
   },
   onTransitionEnd: function onTransitionEnd() {
     var swiper = this;
@@ -5573,11 +5573,11 @@ var Zoom = {
     if (!gesture.$slideEl) {
       gesture.$slideEl = swiper.clickedSlide ? $$1(swiper.clickedSlide) : swiper.slides.eq(swiper.activeIndex);
       gesture.$imageEl = gesture.$slideEl.find('img, svg, canvas');
-      gesture.$imageWrapEl = gesture.$imageEl.parent(("." + (params.containerClass)));
+      gesture.$imageWrapEl = gesture.$imageEl.parent(('.' + (params.containerClass)));
     }
     if (!gesture.$imageEl || gesture.$imageEl.length === 0) { return; }
 
-    gesture.$slideEl.addClass(("" + (params.zoomedSlideClass)));
+    gesture.$slideEl.addClass(('' + (params.zoomedSlideClass)));
 
     var touchX;
     var touchY;
@@ -5646,8 +5646,8 @@ var Zoom = {
       translateX = 0;
       translateY = 0;
     }
-    gesture.$imageWrapEl.transition(300).transform(("translate3d(" + translateX + "px, " + translateY + "px,0)"));
-    gesture.$imageEl.transition(300).transform(("translate3d(0,0,0) scale(" + (zoom.scale) + ")"));
+    gesture.$imageWrapEl.transition(300).transform(('translate3d(' + translateX + 'px, ' + translateY + 'px,0)'));
+    gesture.$imageEl.transition(300).transform(('translate3d(0,0,0) scale(' + (zoom.scale) + ')'));
   },
   out: function out() {
     var swiper = this;
@@ -5659,7 +5659,7 @@ var Zoom = {
     if (!gesture.$slideEl) {
       gesture.$slideEl = swiper.clickedSlide ? $$1(swiper.clickedSlide) : swiper.slides.eq(swiper.activeIndex);
       gesture.$imageEl = gesture.$slideEl.find('img, svg, canvas');
-      gesture.$imageWrapEl = gesture.$imageEl.parent(("." + (params.containerClass)));
+      gesture.$imageWrapEl = gesture.$imageEl.parent(('.' + (params.containerClass)));
     }
     if (!gesture.$imageEl || gesture.$imageEl.length === 0) { return; }
 
@@ -5667,7 +5667,7 @@ var Zoom = {
     zoom.currentScale = 1;
     gesture.$imageWrapEl.transition(300).transform('translate3d(0,0,0)');
     gesture.$imageEl.transition(300).transform('translate3d(0,0,0) scale(1)');
-    gesture.$slideEl.removeClass(("" + (params.zoomedSlideClass)));
+    gesture.$slideEl.removeClass(('' + (params.zoomedSlideClass)));
     gesture.$slideEl = undefined;
   },
   // Attach/Detach Events
@@ -5695,7 +5695,7 @@ var Zoom = {
     // Move image
     swiper.slides.each(function (index, slideEl) {
       var $slideEl = $$1(slideEl);
-      if ($slideEl.find(("." + (swiper.params.zoom.containerClass))).length > 0) {
+      if ($slideEl.find(('.' + (swiper.params.zoom.containerClass))).length > 0) {
         $slideEl.on(swiper.touchEvents.move, zoom.onTouchMove);
       }
     });
@@ -5725,7 +5725,7 @@ var Zoom = {
     // Move image
     swiper.slides.each(function (index, slideEl) {
       var $slideEl = $$1(slideEl);
-      if ($slideEl.find(("." + (swiper.params.zoom.containerClass))).length > 0) {
+      if ($slideEl.find(('.' + (swiper.params.zoom.containerClass))).length > 0) {
         $slideEl.off(swiper.touchEvents.move, zoom.onTouchMove);
       }
     });
@@ -5837,10 +5837,10 @@ var Lazy = {
     var isVirtual = swiper.virtual && swiper.params.virtual.enabled;
 
     var $slideEl = isVirtual
-      ? swiper.$wrapperEl.children(("." + (swiper.params.slideClass) + "[data-swiper-slide-index=\"" + index + "\"]"))
+      ? swiper.$wrapperEl.children(('.' + (swiper.params.slideClass) + '[data-swiper-slide-index="' + index + '"]'))
       : swiper.slides.eq(index);
 
-    var $images = $slideEl.find(("." + (params.elementClass) + ":not(." + (params.loadedClass) + "):not(." + (params.loadingClass) + ")"));
+    var $images = $slideEl.find(('.' + (params.elementClass) + ':not(.' + (params.loadedClass) + '):not(.' + (params.loadingClass) + ')'));
     if ($slideEl.hasClass(params.elementClass) && !$slideEl.hasClass(params.loadedClass) && !$slideEl.hasClass(params.loadingClass)) {
       $images = $images.add($slideEl[0]);
     }
@@ -5858,7 +5858,7 @@ var Lazy = {
       swiper.loadImage($imageEl[0], (src || background), srcset, sizes, false, function () {
         if (typeof swiper === 'undefined' || swiper === null || !swiper || (swiper && !swiper.params) || swiper.destroyed) { return; }
         if (background) {
-          $imageEl.css('background-image', ("url(\"" + background + "\")"));
+          $imageEl.css('background-image', ('url("' + background + '")'));
           $imageEl.removeAttr('data-background');
         } else {
           if (srcset) {
@@ -5876,14 +5876,14 @@ var Lazy = {
         }
 
         $imageEl.addClass(params.loadedClass).removeClass(params.loadingClass);
-        $slideEl.find(("." + (params.preloaderClass))).remove();
+        $slideEl.find(('.' + (params.preloaderClass))).remove();
         if (swiper.params.loop && loadInDuplicate) {
           var slideOriginalIndex = $slideEl.attr('data-swiper-slide-index');
           if ($slideEl.hasClass(swiper.params.slideDuplicateClass)) {
-            var originalSlide = swiper.$wrapperEl.children(("[data-swiper-slide-index=\"" + slideOriginalIndex + "\"]:not(." + (swiper.params.slideDuplicateClass) + ")"));
+            var originalSlide = swiper.$wrapperEl.children(('[data-swiper-slide-index="' + slideOriginalIndex + '"]:not(.' + (swiper.params.slideDuplicateClass) + ')'));
             swiper.lazy.loadInSlide(originalSlide.index(), false);
           } else {
-            var duplicatedSlide = swiper.$wrapperEl.children(("." + (swiper.params.slideDuplicateClass) + "[data-swiper-slide-index=\"" + slideOriginalIndex + "\"]"));
+            var duplicatedSlide = swiper.$wrapperEl.children(('.' + (swiper.params.slideDuplicateClass) + '[data-swiper-slide-index="' + slideOriginalIndex + '"]'));
             swiper.lazy.loadInSlide(duplicatedSlide.index(), false);
           }
         }
@@ -5909,7 +5909,7 @@ var Lazy = {
 
     function slideExist(index) {
       if (isVirtual) {
-        if ($wrapperEl.children(("." + (swiperParams.slideClass) + "[data-swiper-slide-index=\"" + index + "\"]")).length) {
+        if ($wrapperEl.children(('.' + (swiperParams.slideClass) + '[data-swiper-slide-index="' + index + '"]')).length) {
           return true;
         }
       } else if (slides[index]) { return true; }
@@ -5924,7 +5924,7 @@ var Lazy = {
 
     if (!swiper.lazy.initialImageLoaded) { swiper.lazy.initialImageLoaded = true; }
     if (swiper.params.watchSlidesVisibility) {
-      $wrapperEl.children(("." + (swiperParams.slideVisibleClass))).each(function (elIndex, slideEl) {
+      $wrapperEl.children(('.' + (swiperParams.slideVisibleClass))).each(function (elIndex, slideEl) {
         var index = isVirtual ? $$1(slideEl).attr('data-swiper-slide-index') : $$1(slideEl).index();
         swiper.lazy.loadInSlide(index);
       });
@@ -5950,10 +5950,10 @@ var Lazy = {
           if (slideExist(i$2)) { swiper.lazy.loadInSlide(i$2); }
         }
       } else {
-        var nextSlide = $wrapperEl.children(("." + (swiperParams.slideNextClass)));
+        var nextSlide = $wrapperEl.children(('.' + (swiperParams.slideNextClass)));
         if (nextSlide.length > 0) { swiper.lazy.loadInSlide(slideIndex(nextSlide)); }
 
-        var prevSlide = $wrapperEl.children(("." + (swiperParams.slidePrevClass)));
+        var prevSlide = $wrapperEl.children(('.' + (swiperParams.slidePrevClass)));
         if (prevSlide.length > 0) { swiper.lazy.loadInSlide(slideIndex(prevSlide)); }
       }
     }
@@ -6258,7 +6258,7 @@ var a11y = {
         swiper.a11y.notify(params.prevSlideMessage);
       }
     }
-    if (swiper.pagination && $targetEl.is(("." + (swiper.params.pagination.bulletClass)))) {
+    if (swiper.pagination && $targetEl.is(('.' + (swiper.params.pagination.bulletClass)))) {
       $targetEl[0].click();
     }
   },
@@ -6334,7 +6334,7 @@ var a11y = {
 
     // Pagination
     if (swiper.pagination && swiper.params.pagination.clickable && swiper.pagination.bullets && swiper.pagination.bullets.length) {
-      swiper.pagination.$el.on('keydown', ("." + (swiper.params.pagination.bulletClass)), swiper.a11y.onEnterKey);
+      swiper.pagination.$el.on('keydown', ('.' + (swiper.params.pagination.bulletClass)), swiper.a11y.onEnterKey);
     }
   },
   destroy: function destroy() {
@@ -6358,7 +6358,7 @@ var a11y = {
 
     // Pagination
     if (swiper.pagination && swiper.params.pagination.clickable && swiper.pagination.bullets && swiper.pagination.bullets.length) {
-      swiper.pagination.$el.off('keydown', ("." + (swiper.params.pagination.bulletClass)), swiper.a11y.onEnterKey);
+      swiper.pagination.$el.off('keydown', ('.' + (swiper.params.pagination.bulletClass)), swiper.a11y.onEnterKey);
     }
   },
 };
@@ -6379,7 +6379,7 @@ var A11y = {
     var swiper = this;
     Utils.extend(swiper, {
       a11y: {
-        liveRegion: $$1(("<span class=\"" + (swiper.params.a11y.notificationClass) + "\" aria-live=\"assertive\" aria-atomic=\"true\"></span>")),
+        liveRegion: $$1(('<span class="' + (swiper.params.a11y.notificationClass) + '" aria-live="assertive" aria-atomic="true"></span>')),
       },
     });
     Object.keys(a11y).forEach(function (methodName) {
@@ -6458,7 +6458,7 @@ var History = {
     var slide = swiper.slides.eq(index);
     var value = History.slugify(slide.attr('data-history'));
     if (!win.location.pathname.includes(key)) {
-      value = key + "/" + value;
+      value = key + '/' + value;
     }
     var currentState = win.history.state;
     if (currentState && currentState.value === value) {
@@ -6544,14 +6544,14 @@ var HashNavigation = {
     var newHash = doc.location.hash.replace('#', '');
     var activeSlideHash = swiper.slides.eq(swiper.activeIndex).attr('data-hash');
     if (newHash !== activeSlideHash) {
-      swiper.slideTo(swiper.$wrapperEl.children(("." + (swiper.params.slideClass) + "[data-hash=\"" + newHash + "\"]")).index());
+      swiper.slideTo(swiper.$wrapperEl.children(('.' + (swiper.params.slideClass) + '[data-hash="' + newHash + '"]')).index());
     }
   },
   setHash: function setHash() {
     var swiper = this;
     if (!swiper.hashNavigation.initialized || !swiper.params.hashNavigation.enabled) { return; }
     if (swiper.params.hashNavigation.replaceState && win.history && win.history.replaceState) {
-      win.history.replaceState(null, null, (("#" + (swiper.slides.eq(swiper.activeIndex).attr('data-hash'))) || ''));
+      win.history.replaceState(null, null, (('#' + (swiper.slides.eq(swiper.activeIndex).attr('data-hash'))) || ''));
     } else {
       var slide = swiper.slides.eq(swiper.activeIndex);
       var hash = slide.attr('data-hash') || slide.attr('data-history');
@@ -6793,7 +6793,7 @@ var Fade = {
         .css({
           opacity: slideOpacity,
         })
-        .transform(("translate3d(" + tx + "px, " + ty + "px, 0px)"));
+        .transform(('translate3d(' + tx + 'px, ' + ty + 'px, 0px)'));
     }
   },
   setTransition: function setTransition(duration) {
@@ -6837,7 +6837,7 @@ var EffectFade = {
     beforeInit: function beforeInit() {
       var swiper = this;
       if (swiper.params.effect !== 'fade') { return; }
-      swiper.classNames.push(((swiper.params.containerModifierClass) + "fade"));
+      swiper.classNames.push(((swiper.params.containerModifierClass) + 'fade'));
       var overwriteParams = {
         slidesPerView: 1,
         slidesPerColumn: 1,
@@ -6884,7 +6884,7 @@ var Cube = {
           $cubeShadowEl = $$1('<div class="swiper-cube-shadow"></div>');
           $wrapperEl.append($cubeShadowEl);
         }
-        $cubeShadowEl.css({ height: (swiperWidth + "px") });
+        $cubeShadowEl.css({ height: (swiperWidth + 'px') });
       } else {
         $cubeShadowEl = $el.find('.swiper-cube-shadow');
         if ($cubeShadowEl.length === 0) {
@@ -6931,7 +6931,7 @@ var Cube = {
         tx = 0;
       }
 
-      var transform = "rotateX(" + (isHorizontal ? 0 : -slideAngle) + "deg) rotateY(" + (isHorizontal ? slideAngle : 0) + "deg) translate3d(" + tx + "px, " + ty + "px, " + tz + "px)";
+      var transform = 'rotateX(' + (isHorizontal ? 0 : -slideAngle) + 'deg) rotateY(' + (isHorizontal ? slideAngle : 0) + 'deg) translate3d(' + tx + 'px, ' + ty + 'px, ' + tz + 'px)';
       if (progress <= 1 && progress > -1) {
         wrapperRotate = (slideIndex * 90) + (progress * 90);
         if (rtl) { wrapperRotate = (-slideIndex * 90) - (progress * 90); }
@@ -6942,11 +6942,11 @@ var Cube = {
         var shadowBefore = isHorizontal ? $slideEl.find('.swiper-slide-shadow-left') : $slideEl.find('.swiper-slide-shadow-top');
         var shadowAfter = isHorizontal ? $slideEl.find('.swiper-slide-shadow-right') : $slideEl.find('.swiper-slide-shadow-bottom');
         if (shadowBefore.length === 0) {
-          shadowBefore = $$1(("<div class=\"swiper-slide-shadow-" + (isHorizontal ? 'left' : 'top') + "\"></div>"));
+          shadowBefore = $$1(('<div class="swiper-slide-shadow-' + (isHorizontal ? 'left' : 'top') + '"></div>'));
           $slideEl.append(shadowBefore);
         }
         if (shadowAfter.length === 0) {
-          shadowAfter = $$1(("<div class=\"swiper-slide-shadow-" + (isHorizontal ? 'right' : 'bottom') + "\"></div>"));
+          shadowAfter = $$1(('<div class="swiper-slide-shadow-' + (isHorizontal ? 'right' : 'bottom') + '"></div>'));
           $slideEl.append(shadowAfter);
         }
         if (shadowBefore.length) { shadowBefore[0].style.opacity = Math.max(-progress, 0); }
@@ -6954,15 +6954,15 @@ var Cube = {
       }
     }
     $wrapperEl.css({
-      '-webkit-transform-origin': ("50% 50% -" + (swiperSize / 2) + "px"),
-      '-moz-transform-origin': ("50% 50% -" + (swiperSize / 2) + "px"),
-      '-ms-transform-origin': ("50% 50% -" + (swiperSize / 2) + "px"),
-      'transform-origin': ("50% 50% -" + (swiperSize / 2) + "px"),
+      '-webkit-transform-origin': ('50% 50% -' + (swiperSize / 2) + 'px'),
+      '-moz-transform-origin': ('50% 50% -' + (swiperSize / 2) + 'px'),
+      '-ms-transform-origin': ('50% 50% -' + (swiperSize / 2) + 'px'),
+      'transform-origin': ('50% 50% -' + (swiperSize / 2) + 'px'),
     });
 
     if (params.shadow) {
       if (isHorizontal) {
-        $cubeShadowEl.transform(("translate3d(0px, " + ((swiperWidth / 2) + params.shadowOffset) + "px, " + (-swiperWidth / 2) + "px) rotateX(90deg) rotateZ(0deg) scale(" + (params.shadowScale) + ")"));
+        $cubeShadowEl.transform(('translate3d(0px, ' + ((swiperWidth / 2) + params.shadowOffset) + 'px, ' + (-swiperWidth / 2) + 'px) rotateX(90deg) rotateZ(0deg) scale(' + (params.shadowScale) + ')'));
       } else {
         var shadowAngle = Math.abs(wrapperRotate) - (Math.floor(Math.abs(wrapperRotate) / 90) * 90);
         var multiplier = 1.5 - (
@@ -6972,12 +6972,12 @@ var Cube = {
         var scale1 = params.shadowScale;
         var scale2 = params.shadowScale / multiplier;
         var offset = params.shadowOffset;
-        $cubeShadowEl.transform(("scale3d(" + scale1 + ", 1, " + scale2 + ") translate3d(0px, " + ((swiperHeight / 2) + offset) + "px, " + (-swiperHeight / 2 / scale2) + "px) rotateX(-90deg)"));
+        $cubeShadowEl.transform(('scale3d(' + scale1 + ', 1, ' + scale2 + ') translate3d(0px, ' + ((swiperHeight / 2) + offset) + 'px, ' + (-swiperHeight / 2 / scale2) + 'px) rotateX(-90deg)'));
       }
     }
     var zFactor = (Browser$1.isSafari || Browser$1.isUiWebView) ? (-swiperSize / 2) : 0;
     $wrapperEl
-      .transform(("translate3d(0px,0," + zFactor + "px) rotateX(" + (swiper.isHorizontal() ? 0 : wrapperRotate) + "deg) rotateY(" + (swiper.isHorizontal() ? -wrapperRotate : 0) + "deg)"));
+      .transform(('translate3d(0px,0,' + zFactor + 'px) rotateX(' + (swiper.isHorizontal() ? 0 : wrapperRotate) + 'deg) rotateY(' + (swiper.isHorizontal() ? -wrapperRotate : 0) + 'deg)'));
   },
   setTransition: function setTransition(duration) {
     var swiper = this;
@@ -7016,8 +7016,8 @@ var EffectCube = {
     beforeInit: function beforeInit() {
       var swiper = this;
       if (swiper.params.effect !== 'cube') { return; }
-      swiper.classNames.push(((swiper.params.containerModifierClass) + "cube"));
-      swiper.classNames.push(((swiper.params.containerModifierClass) + "3d"));
+      swiper.classNames.push(((swiper.params.containerModifierClass) + 'cube'));
+      swiper.classNames.push(((swiper.params.containerModifierClass) + '3d'));
       var overwriteParams = {
         slidesPerView: 1,
         slidesPerColumn: 1,
@@ -7076,18 +7076,18 @@ var Flip = {
         var shadowBefore = swiper.isHorizontal() ? $slideEl.find('.swiper-slide-shadow-left') : $slideEl.find('.swiper-slide-shadow-top');
         var shadowAfter = swiper.isHorizontal() ? $slideEl.find('.swiper-slide-shadow-right') : $slideEl.find('.swiper-slide-shadow-bottom');
         if (shadowBefore.length === 0) {
-          shadowBefore = $$1(("<div class=\"swiper-slide-shadow-" + (swiper.isHorizontal() ? 'left' : 'top') + "\"></div>"));
+          shadowBefore = $$1(('<div class="swiper-slide-shadow-' + (swiper.isHorizontal() ? 'left' : 'top') + '"></div>'));
           $slideEl.append(shadowBefore);
         }
         if (shadowAfter.length === 0) {
-          shadowAfter = $$1(("<div class=\"swiper-slide-shadow-" + (swiper.isHorizontal() ? 'right' : 'bottom') + "\"></div>"));
+          shadowAfter = $$1(('<div class="swiper-slide-shadow-' + (swiper.isHorizontal() ? 'right' : 'bottom') + '"></div>'));
           $slideEl.append(shadowAfter);
         }
         if (shadowBefore.length) { shadowBefore[0].style.opacity = Math.max(-progress, 0); }
         if (shadowAfter.length) { shadowAfter[0].style.opacity = Math.max(progress, 0); }
       }
       $slideEl
-        .transform(("translate3d(" + tx + "px, " + ty + "px, 0px) rotateX(" + rotateX + "deg) rotateY(" + rotateY + "deg)"));
+        .transform(('translate3d(' + tx + 'px, ' + ty + 'px, 0px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg)'));
     }
   },
   setTransition: function setTransition(duration) {
@@ -7138,8 +7138,8 @@ var EffectFlip = {
     beforeInit: function beforeInit() {
       var swiper = this;
       if (swiper.params.effect !== 'flip') { return; }
-      swiper.classNames.push(((swiper.params.containerModifierClass) + "flip"));
-      swiper.classNames.push(((swiper.params.containerModifierClass) + "3d"));
+      swiper.classNames.push(((swiper.params.containerModifierClass) + 'flip'));
+      swiper.classNames.push(((swiper.params.containerModifierClass) + '3d'));
       var overwriteParams = {
         slidesPerView: 1,
         slidesPerColumn: 1,
@@ -7200,7 +7200,7 @@ var Coverflow = {
       if (Math.abs(rotateY) < 0.001) { rotateY = 0; }
       if (Math.abs(rotateX) < 0.001) { rotateX = 0; }
 
-      var slideTransform = "translate3d(" + translateX + "px," + translateY + "px," + translateZ + "px)  rotateX(" + rotateX + "deg) rotateY(" + rotateY + "deg)";
+      var slideTransform = 'translate3d(' + translateX + 'px,' + translateY + 'px,' + translateZ + 'px)  rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg)';
 
       $slideEl.transform(slideTransform);
       $slideEl[0].style.zIndex = -Math.abs(Math.round(offsetMultiplier)) + 1;
@@ -7209,11 +7209,11 @@ var Coverflow = {
         var $shadowBeforeEl = isHorizontal ? $slideEl.find('.swiper-slide-shadow-left') : $slideEl.find('.swiper-slide-shadow-top');
         var $shadowAfterEl = isHorizontal ? $slideEl.find('.swiper-slide-shadow-right') : $slideEl.find('.swiper-slide-shadow-bottom');
         if ($shadowBeforeEl.length === 0) {
-          $shadowBeforeEl = $$1(("<div class=\"swiper-slide-shadow-" + (isHorizontal ? 'left' : 'top') + "\"></div>"));
+          $shadowBeforeEl = $$1(('<div class="swiper-slide-shadow-' + (isHorizontal ? 'left' : 'top') + '"></div>'));
           $slideEl.append($shadowBeforeEl);
         }
         if ($shadowAfterEl.length === 0) {
-          $shadowAfterEl = $$1(("<div class=\"swiper-slide-shadow-" + (isHorizontal ? 'right' : 'bottom') + "\"></div>"));
+          $shadowAfterEl = $$1(('<div class="swiper-slide-shadow-' + (isHorizontal ? 'right' : 'bottom') + '"></div>'));
           $slideEl.append($shadowAfterEl);
         }
         if ($shadowBeforeEl.length) { $shadowBeforeEl[0].style.opacity = offsetMultiplier > 0 ? offsetMultiplier : 0; }
@@ -7224,7 +7224,7 @@ var Coverflow = {
     // Set correct perspective for IE10
     if (Support.pointerEvents || Support.prefixedPointerEvents) {
       var ws = $wrapperEl[0].style;
-      ws.perspectiveOrigin = center + "px 50%";
+      ws.perspectiveOrigin = center + 'px 50%';
     }
   },
   setTransition: function setTransition(duration) {
@@ -7261,8 +7261,8 @@ var EffectCoverflow = {
       var swiper = this;
       if (swiper.params.effect !== 'coverflow') { return; }
 
-      swiper.classNames.push(((swiper.params.containerModifierClass) + "coverflow"));
-      swiper.classNames.push(((swiper.params.containerModifierClass) + "3d"));
+      swiper.classNames.push(((swiper.params.containerModifierClass) + 'coverflow'));
+      swiper.classNames.push(((swiper.params.containerModifierClass) + '3d'));
 
       swiper.params.watchSlidesProgress = true;
       swiper.originalParams.watchSlidesProgress = true;
