@@ -535,6 +535,10 @@ Hamburger Menu
   background-size: cover !important;
 }
 
+.homepage-featured-events.bg {
+    background: url("/images/featured-events-bg.jpg") no-repeat center
+}
+
 .homepage-featured-events .event-content-wrap {
   position: relative;
   padding: 36px 18px;
@@ -686,8 +690,12 @@ Hamburger Menu
 }
 
 @media screen and (min-width: 1200px) {
-  .homepage-featured-events {
+  .homepage-featured-events.bg {
     min-height: 1480px;
+  }
+
+  .homepage-featured-events {
+    min-height: 1200px;
   }
 
   .homepage-featured-events .positioning-event-1 {
