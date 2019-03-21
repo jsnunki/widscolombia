@@ -1,4 +1,11 @@
 {
   "name": "widscolombia",
-  "alias": "www.widscolombia.org"
+  "alias": ["www.widscolombia.org"],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "status": 301,
+      "headers": { "Location": "https://widscolombia.org/$1" }
+    }
+  ]
 }
