@@ -1,6 +1,10 @@
 {
+  "version": 2,
   "name": "widscolombia",
-  "alias": ["www.widscolombia.org"],
+  "alias": ["www.widscolombia.org", "widscolombia.org"],
+  "builds": [
+    { "src": "package.json", "use": "@now/static-build" }
+  ],
   "routes": [
     {
       "src": "/(.*)",
