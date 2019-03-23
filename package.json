@@ -45,8 +45,7 @@
     "test": "npm run serve:test",
     "tasks": "gulp --tasks",
     "now-json": "cp now.json.dist dist/now.json",
-    "now-alias": "now && now alias",
-    "deploy": "npm run build && npm run now-json && cd dist && npm run now-alias"
+    "deploy": "npm run build && npm run now-json"
   },
   "browserslist": [
     "> 1%",
